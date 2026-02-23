@@ -246,6 +246,7 @@ export default function EmailSignupPage() {
     form.password.length >= 8 &&
     form.password === form.confirmPassword &&
     agreed;
+    console.log("email.tsx");
 
   return (
     <div style={styles.bg}>
