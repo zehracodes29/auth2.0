@@ -1,8 +1,15 @@
 'use client';
 import { useState } from "react";
+import EmailLogin from "./email";
+import PhoneLogin from "./phone";
+import GoogleLogin from "./google";
+import Link from "next/link";
 
 export default function LoginPage() {
   const [hoveredBtn, setHoveredBtn] = useState<string | null>(null);
+  const [method, setMethod] = useState<"email" | "phone" | "google" | null>(null);
+
+  const clearMethod = () => setMethod(null);
 
   return (
     <div style={styles.bg}>
@@ -21,104 +28,117 @@ export default function LoginPage() {
           <span style={styles.logoText}>SahiHai</span>
         </div>
 
-        {/* Header */}
-        <div style={styles.header}>
-          <h1 style={styles.heading}>Welcome back</h1>
-          <p style={styles.subtext}>Sign in to continue to your account</p>
-        </div>
+        {method === "email" && <EmailLogin onBack={clearMethod} />}
+        {method === "phone" && <PhoneLogin onBack={clearMethod} />}
+        {method === "google" && <GoogleLogin onBack={clearMethod} />}
 
-        {/* Buttons */}
-        <div style={styles.btnStack}>
-          {/* Google */}
-          <button
-            style={{
-              ...styles.socialBtn,
-              ...(hoveredBtn === "google" ? styles.socialBtnHover : {}),
-            }}
-            onMouseEnter={() => setHoveredBtn("google")}
-            onMouseLeave={() => setHoveredBtn(null)}
-          >
-            <div style={styles.btnIconWrap}>
-              <svg width="20" height="20" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" />
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-              </svg>
+        {method === null && (
+          <>
+            {/* Header */}
+            <div style={styles.header}>
+              <h1 style={styles.heading}>Welcome back</h1>
+              <p style={styles.subtext}>Sign in to continue to your account</p>
             </div>
-            <span style={styles.btnLabel}>Continue with Google</span>
-            <div style={styles.btnArrow}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </div>
-          </button>
 
-          {/* Phone */}
-          <button
-            style={{
-              ...styles.socialBtn,
-              ...(hoveredBtn === "phone" ? styles.socialBtnHover : {}),
-            }}
-            onMouseEnter={() => setHoveredBtn("phone")}
-            onMouseLeave={() => setHoveredBtn(null)}
-          >
-            <div style={{ ...styles.btnIconWrap, background: "#eef2ff" }}>
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-                <line x1="12" y1="18" x2="12.01" y2="18" />
-              </svg>
-            </div>
-            <span style={styles.btnLabel}>Continue with Phone</span>
-            <div style={styles.btnArrow}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </div>
-          </button>
+            {/* Buttons */}
+            <div style={styles.btnStack}>
+              {/* Google */}
+              <button
+                style={{
+                  ...styles.socialBtn,
+                  ...(hoveredBtn === "google" ? styles.socialBtnHover : {}),
+                }}
+                onMouseEnter={() => setHoveredBtn("google")}
+                onMouseLeave={() => setHoveredBtn(null)}
+                onClick={() => setMethod("google")}
+              >
+                <div style={styles.btnIconWrap}>
+                  <svg width="20" height="20" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" />
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                  </svg>
+                </div>
+                <span style={styles.btnLabel}>Continue with Google</span>
+                <div style={styles.btnArrow}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </button>
 
-          {/* Email */}
-          <button
-            style={{
-              ...styles.socialBtn,
-              ...(hoveredBtn === "email" ? styles.socialBtnHover : {}),
-            }}
-            onMouseEnter={() => setHoveredBtn("email")}
-            onMouseLeave={() => setHoveredBtn(null)}
-          >
-            <div style={{ ...styles.btnIconWrap, background: "#eef2ff" }}>
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
+              {/* Phone */}
+              <button
+                style={{
+                  ...styles.socialBtn,
+                  ...(hoveredBtn === "phone" ? styles.socialBtnHover : {}),
+                }}
+                onMouseEnter={() => setHoveredBtn("phone")}
+                onMouseLeave={() => setHoveredBtn(null)}
+                onClick={() => setMethod("phone")}
+              >
+                <div style={{ ...styles.btnIconWrap, background: "#eef2ff" }}>
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                    <line x1="12" y1="18" x2="12.01" y2="18" />
+                  </svg>
+                </div>
+                <span style={styles.btnLabel}>Continue with Phone</span>
+                <div style={styles.btnArrow}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </button>
+
+              {/* Email */}
+              <button
+                style={{
+                  ...styles.socialBtn,
+                  ...(hoveredBtn === "email" ? styles.socialBtnHover : {}),
+                }}
+                onMouseEnter={() => setHoveredBtn("email")}
+                onMouseLeave={() => setHoveredBtn(null)}
+                onClick={() => setMethod("email")}
+              >
+                <div style={{ ...styles.btnIconWrap, background: "#eef2ff" }}>
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <span style={styles.btnLabel}>Continue with Email</span>
+                <div style={styles.btnArrow}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </button>
             </div>
-            <span style={styles.btnLabel}>Continue with Email</span>
-            <div style={styles.btnArrow}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+
+            {/* Divider */}
+            <div style={styles.divider}>
+              <div style={styles.dividerLine} />
+              <span style={styles.dividerText}>New to SahiHai?</span>
+              <div style={styles.dividerLine} />
             </div>
-          </button>
-        </div>
 
-        {/* Divider */}
-        <div style={styles.divider}>
-          <div style={styles.dividerLine} />
-          <span style={styles.dividerText}>New to SahiHai?</span>
-          <div style={styles.dividerLine} />
-        </div>
+            {/* Sign up CTA */}
+            <Link href="/signup" style={{ textDecoration: 'none' }}>
+              <button style={styles.signupBtn}>
+                Create an account
+              </button>
+            </Link>
 
-        {/* Sign up CTA */}
-        <button style={styles.signupBtn}>
-          Create an account
-        </button>
-
-        {/* Footer note */}
-        <p style={styles.footerNote}>
-          By continuing, you agree to our{" "}
-          <span style={styles.footerLink}>Terms</span> and{" "}
-          <span style={styles.footerLink}>Privacy Policy</span>
-        </p>
+            {/* Footer note */}
+            <p style={styles.footerNote}>
+              By continuing, you agree to our{" "}
+              <span style={styles.footerLink}>Terms</span> and{" "}
+              <span style={styles.footerLink}>Privacy Policy</span>
+            </p>
+          </>
+        )}
       </div>
     </div>
   );
