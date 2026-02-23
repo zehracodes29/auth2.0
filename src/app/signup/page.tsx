@@ -10,33 +10,6 @@ const BLUE_MID = "#3B82F6";
 const BLUE_DARK = "#1D4ED8";
 
 const styles = `
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --blue: ${BLUE_PRIMARY};
-    --blue-light: ${BLUE_LIGHT};
-    --blue-mid: ${BLUE_MID};
-    --blue-dark: ${BLUE_DARK};
-    --text: #0F172A;
-    --text-muted: #64748B;
-    --border: #E2E8F0;
-    --white: #FFFFFF;
-    --success: #10B981;
-    --radius: 14px;
-    --shadow: 0 4px 24px rgba(37,99,235,0.08), 0 1px 4px rgba(0,0,0,0.04);
-    --shadow-lg: 0 16px 48px rgba(37,99,235,0.12), 0 4px 16px rgba(0,0,0,0.06);
-  }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--white);
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
   /* Background ripples */
   .bg-ripple {
     position: fixed;
@@ -456,13 +429,13 @@ export default function SignupPage() {
       </svg>
 
       <svg className="fingerprint" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="50" cy="50" rx="48" ry="48" fill="none" stroke="#2563EB" strokeWidth="1.2"/>
-        <ellipse cx="50" cy="50" rx="38" ry="39" fill="none" stroke="#2563EB" strokeWidth="1.2"/>
-        <ellipse cx="50" cy="50" rx="28" ry="30" fill="none" stroke="#2563EB" strokeWidth="1.2"/>
-        <ellipse cx="50" cy="50" rx="18" ry="20" fill="none" stroke="#2563EB" strokeWidth="1.2"/>
-        <ellipse cx="50" cy="50" rx="8" ry="10" fill="none" stroke="#2563EB" strokeWidth="1.2"/>
-        <line x1="50" y1="2" x2="50" y2="18" stroke="#2563EB" strokeWidth="1.2"/>
-        <line x1="50" y1="82" x2="50" y2="98" stroke="#2563EB" strokeWidth="1.2"/>
+        <ellipse cx="50" cy="50" rx="48" ry="48" fill="none" stroke="#2563EB" strokeWidth="1.2" />
+        <ellipse cx="50" cy="50" rx="38" ry="39" fill="none" stroke="#2563EB" strokeWidth="1.2" />
+        <ellipse cx="50" cy="50" rx="28" ry="30" fill="none" stroke="#2563EB" strokeWidth="1.2" />
+        <ellipse cx="50" cy="50" rx="18" ry="20" fill="none" stroke="#2563EB" strokeWidth="1.2" />
+        <ellipse cx="50" cy="50" rx="8" ry="10" fill="none" stroke="#2563EB" strokeWidth="1.2" />
+        <line x1="50" y1="2" x2="50" y2="18" stroke="#2563EB" strokeWidth="1.2" />
+        <line x1="50" y1="82" x2="50" y2="98" stroke="#2563EB" strokeWidth="1.2" />
       </svg>
 
       <div className="page">
@@ -471,8 +444,8 @@ export default function SignupPage() {
           <div className="logo">
             <div className="logo-icon">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 2C7 2 4.5 4 4.5 6.5c0 1.2.5 2.3 1.3 3.1L4 11.5c-.3.3-.3.8 0 1.1l1.1 1.1c.3.3.8.3 1.1 0l1.1-1.1c.6.3 1.4.4 2.2.4h1c.8 0 1.6-.1 2.2-.4l1.1 1.1c.3.3.8.3 1.1 0l1.1-1.1c.3-.3.3-.8 0-1.1l-1.8-1.9c.8-.8 1.3-1.9 1.3-3.1C15.5 4 13 2 10 2z" fill="white"/>
-                <circle cx="10" cy="14.5" r="3.5" fill="white"/>
+                <path d="M10 2C7 2 4.5 4 4.5 6.5c0 1.2.5 2.3 1.3 3.1L4 11.5c-.3.3-.3.8 0 1.1l1.1 1.1c.3.3.8.3 1.1 0l1.1-1.1c.6.3 1.4.4 2.2.4h1c.8 0 1.6-.1 2.2-.4l1.1 1.1c.3.3.8.3 1.1 0l1.1-1.1c.3-.3.3-.8 0-1.1l-1.8-1.9c.8-.8 1.3-1.9 1.3-3.1C15.5 4 13 2 10 2z" fill="white" />
+                <circle cx="10" cy="14.5" r="3.5" fill="white" />
               </svg>
             </div>
             <span className="logo-name">SahiHai</span>
@@ -482,16 +455,16 @@ export default function SignupPage() {
             <div className="success-screen">
               <div className="success-icon">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                  <path d="M8 18l7 7 13-13" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 18l7 7 13-13" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <h1>You're verified!</h1>
-              <p className="subtitle" style={{marginBottom: 0}}>
-                Your identity has been confirmed.<br/>
+              <p className="subtitle" style={{ marginBottom: 0 }}>
+                Your identity has been confirmed.<br />
                 Redirecting to onboarding...
               </p>
-              <div style={{marginTop: 20, display: "flex", justifyContent: "center"}}>
-                <div className="spinner" style={{borderTopColor: BLUE_PRIMARY, border: `2px solid #E2E8F0`, borderTopWidth: 2}}></div>
+              <div style={{ marginTop: 20, display: "flex", justifyContent: "center" }}>
+                <div className="spinner" style={{ borderTopColor: BLUE_PRIMARY, border: `2px solid #E2E8F0`, borderTopWidth: 2 }}></div>
               </div>
             </div>
           ) : (
@@ -502,18 +475,18 @@ export default function SignupPage() {
               {/* Google */}
               <button className="social-btn" onClick={handleGoogleSignup} disabled={loading}>
                 <svg width="18" height="18" viewBox="0 0 18 18">
-                  <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
-                  <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853"/>
-                  <path d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
-                  <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
+                  <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4" />
+                  <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853" />
+                  <path d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05" />
+                  <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335" />
                 </svg>
-                Continue with Google 
+                Continue with Google
               </button>
 
               <div className="divider">
-                <div className="divider-line"/>
+                <div className="divider-line" />
                 <span className="divider-text">or sign up with</span>
-                <div className="divider-line"/>
+                <div className="divider-line" />
               </div>
 
               {/* Method tabs */}
@@ -535,7 +508,7 @@ export default function SignupPage() {
               {method && (
                 <form onSubmit={handleSubmit}>
                   <div className="row">
-                    <div className="field" style={{animationDelay: "0ms"}}>
+                    <div className="field" style={{ animationDelay: "0ms" }}>
                       <label>First Name</label>
                       <input
                         type="text"
@@ -545,7 +518,7 @@ export default function SignupPage() {
                         required
                       />
                     </div>
-                    <div className="field" style={{animationDelay: "50ms"}}>
+                    <div className="field" style={{ animationDelay: "50ms" }}>
                       <label>Last Name</label>
                       <input
                         type="text"
@@ -558,7 +531,7 @@ export default function SignupPage() {
                   </div>
 
                   {method === "email" ? (
-                    <div className="field" style={{animationDelay: "100ms"}}>
+                    <div className="field" style={{ animationDelay: "100ms" }}>
                       <label>Email Address</label>
                       <input
                         type="email"
@@ -569,7 +542,7 @@ export default function SignupPage() {
                       />
                     </div>
                   ) : (
-                    <div className="field" style={{animationDelay: "100ms"}}>
+                    <div className="field" style={{ animationDelay: "100ms" }}>
                       <label>Phone Number</label>
                       <div className="phone-wrap">
                         <div className="phone-prefix">🇮🇳 +91</div>
@@ -584,7 +557,7 @@ export default function SignupPage() {
                     </div>
                   )}
 
-                  <div className="field" style={{animationDelay: "150ms"}}>
+                  <div className="field" style={{ animationDelay: "150ms" }}>
                     <label>Password</label>
                     <input
                       type="password"
@@ -599,24 +572,23 @@ export default function SignupPage() {
                           {[1, 2, 3].map(i => (
                             <div
                               key={i}
-                              className={`strength-seg ${
-                                i <= pwStrength
-                                  ? pwStrength === 1 ? "weak"
+                              className={`strength-seg ${i <= pwStrength
+                                ? pwStrength === 1 ? "weak"
                                   : pwStrength === 2 ? "ok"
-                                  : "strong"
-                                  : ""
-                              }`}
+                                    : "strong"
+                                : ""
+                                }`}
                             />
                           ))}
                         </div>
-                        <div style={{fontSize: 11, color: pwStrength === 1 ? "#EF4444" : pwStrength === 2 ? "#F59E0B" : "#10B981", marginTop: 4}}>
+                        <div style={{ fontSize: 11, color: pwStrength === 1 ? "#EF4444" : pwStrength === 2 ? "#F59E0B" : "#10B981", marginTop: 4 }}>
                           {strengthLabels[pwStrength]}
                         </div>
                       </>
                     )}
                   </div>
 
-                  <div className="field" style={{animationDelay: "200ms"}}>
+                  <div className="field" style={{ animationDelay: "200ms" }}>
                     <label>Confirm Password</label>
                     <input
                       type="password"
@@ -626,7 +598,7 @@ export default function SignupPage() {
                       required
                     />
                     {form.confirmPassword && form.password !== form.confirmPassword && (
-                      <div style={{fontSize: 11, color: "#EF4444", marginTop: 4}}>Passwords don't match</div>
+                      <div style={{ fontSize: 11, color: "#EF4444", marginTop: 4 }}>Passwords don't match</div>
                     )}
                   </div>
 
@@ -635,7 +607,7 @@ export default function SignupPage() {
                     className="btn-primary"
                     disabled={loading || (!!form.confirmPassword && form.password !== form.confirmPassword)}
                   >
-                    {loading ? <><span className="spinner"/>&nbsp;Verifying...</> : "Create Account →"}
+                    {loading ? <><span className="spinner" />&nbsp;Verifying...</> : "Create Account →"}
                   </button>
 
                   <p className="terms">

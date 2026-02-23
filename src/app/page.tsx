@@ -1,33 +1,6 @@
 
 export default function MainPage() {
   const styles = `
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Serif+Display:ital@0;1&display=swap');
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --blue: #2563EB;
-      --blue-mid: #3B82F6;
-      --blue-light: #EFF6FF;
-      --blue-dark: #1D4ED8;
-      --blue-pale: #DBEAFE;
-      --text: #0F172A;
-      --text-muted: #64748B;
-      --border: #E2E8F0;
-      --white: #FFFFFF;
-      --success: #10B981;
-    }
-
-    html, body { height: 100%; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--white);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
     /* ─── Background ─── */
     .bg {
       position: fixed;
@@ -428,15 +401,15 @@ export default function MainPage() {
         <div className="bg-glow-bl" />
 
         <svg className="ripples" viewBox="0 0 780 780" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(i => <circle key={i} cx="390" cy="390" r="60" />)}
+          {[0, 1, 2, 3, 4].map(i => <circle key={i} cx="390" cy="390" r="60" />)}
         </svg>
 
         <svg className="fingerprint" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-          {[54,46,38,30,22,14,6].map((r,i) => (
-            <ellipse key={i} cx="60" cy="60" rx={r} ry={r+2.5} fill="none" stroke="#2563EB" strokeWidth="1.4"/>
+          {[54, 46, 38, 30, 22, 14, 6].map((r, i) => (
+            <ellipse key={i} cx="60" cy="60" rx={r} ry={r + 2.5} fill="none" stroke="#2563EB" strokeWidth="1.4" />
           ))}
-          <line x1="60" y1="2" x2="60" y2="14" stroke="#2563EB" strokeWidth="1.4"/>
-          <line x1="60" y1="106" x2="60" y2="118" stroke="#2563EB" strokeWidth="1.4"/>
+          <line x1="60" y1="2" x2="60" y2="14" stroke="#2563EB" strokeWidth="1.4" />
+          <line x1="60" y1="106" x2="60" y2="118" stroke="#2563EB" strokeWidth="1.4" />
         </svg>
 
         <div className="avatar av1">👩‍💼<div className="check">✓</div></div>
@@ -450,8 +423,8 @@ export default function MainPage() {
         <a href="/" className="logo">
           <div className="logo-icon">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <path d="M11 2C7.5 2 5 4.5 5 7.5c0 1.4.6 2.7 1.5 3.6L4.5 13c-.4.4-.4.9 0 1.2l1.3 1.3c.4.4.9.4 1.2 0l1.3-1.3c.7.3 1.6.5 2.5.5h1.4c.9 0 1.8-.2 2.5-.5l1.3 1.3c.4.4.9.4 1.2 0l1.3-1.3c.4-.4.4-.9 0-1.2l-2-2.1c.9-.9 1.5-2.2 1.5-3.6C17 4.5 14.5 2 11 2z" fill="white"/>
-              <circle cx="11" cy="16.5" r="4" fill="white"/>
+              <path d="M11 2C7.5 2 5 4.5 5 7.5c0 1.4.6 2.7 1.5 3.6L4.5 13c-.4.4-.4.9 0 1.2l1.3 1.3c.4.4.9.4 1.2 0l1.3-1.3c.7.3 1.6.5 2.5.5h1.4c.9 0 1.8-.2 2.5-.5l1.3 1.3c.4.4.9.4 1.2 0l1.3-1.3c.4-.4.4-.9 0-1.2l-2-2.1c.9-.9 1.5-2.2 1.5-3.6C17 4.5 14.5 2 11 2z" fill="white" />
+              <circle cx="11" cy="16.5" r="4" fill="white" />
             </svg>
           </div>
           <span className="logo-name">SahiHai</span>
@@ -484,15 +457,15 @@ export default function MainPage() {
             Get Started — It's Free
             <span className="arr">
               <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
-                <path d="M3.5 8.5h10M9.5 4.5l4 4-4 4" stroke="white" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3.5 8.5h10M9.5 4.5l4 4-4 4" stroke="white" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
           </a>
 
           <a href="/login" className="btn-login">
             <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
-              <rect x="2.5" y="2.5" width="12" height="12" rx="3" stroke="currentColor" strokeWidth="1.6"/>
-              <path d="M6.5 8.5h4M9 6l2.5 2.5L9 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <rect x="2.5" y="2.5" width="12" height="12" rx="3" stroke="currentColor" strokeWidth="1.6" />
+              <path d="M6.5 8.5h4M9 6l2.5 2.5L9 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             Sign In
           </a>

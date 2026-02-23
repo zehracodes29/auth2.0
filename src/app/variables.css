@@ -109,3 +109,19 @@
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.552 0.016 285.938);
 }
+
+:root {
+    --blue: #2563EB;
+    --blue-mid: #3B82F6;
+    --blue-light: #EFF6FF;
+    --blue-dark: #1D4ED8;
+    --blue-pale: #DBEAFE;
+    --text: #0F172A;
+    --text-muted: #64748B;
+    --border: #E2E8F0;
+    --white: #FFFFFF;
+    --success: #10B981;
+    --custom-radius: 14px;
+    --shadow: 0 4px 24px rgba(37, 99, 235, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 16px 48px rgba(37, 99, 235, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+}
