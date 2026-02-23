@@ -76,7 +76,7 @@ function InputField({
       onBlur={() => setFocused(false)}
       style={{
         ...styles.input,
-        borderColor: focused ? "#3b6ef8" : "#e8ecf4",
+        borderColor: focused ? "var(--blue)" : "#e8ecf4",
         boxShadow: focused ? "0 0 0 3px rgba(59,110,248,0.1)" : "none",
         ...extraStyle,
       }}
@@ -107,7 +107,7 @@ function PasswordField({
         style={{
           ...styles.input,
           paddingRight: 44,
-          borderColor: focused ? "#3b6ef8" : "#e8ecf4",
+          borderColor: focused ? "var(--blue)" : "#e8ecf4",
           boxShadow: focused ? "0 0 0 3px rgba(59,110,248,0.1)" : "none",
         }}
       />
@@ -152,7 +152,7 @@ function SelectField({
       onBlur={() => setFocused(false)}
       style={{
         ...styles.select,
-        borderColor: focused ? "#3b6ef8" : "#e8ecf4",
+        borderColor: focused ? "var(--blue)" : "#e8ecf4",
         boxShadow: focused ? "0 0 0 3px rgba(59,110,248,0.1)" : "none",
         color: value ? "#1a1a2e" : "#aab4c8",
       }}
@@ -268,7 +268,7 @@ export default function EmailSignupPage() {
                 key={s}
                 style={{
                   ...styles.progressStep,
-                  background: progressStep >= s ? "#3b6ef8" : "#e8ecf4",
+                  background: progressStep >= s ? "var(--blue)" : "#e8ecf4",
                 }}
               />
             ))}
@@ -335,7 +335,7 @@ export default function EmailSignupPage() {
               </div>
             </div>
 
-            <Label text="Email address" optional/>
+            <Label text="Email address" optional />
             <InputField
               type="email"
               placeholder="riya@example.com"
@@ -343,7 +343,7 @@ export default function EmailSignupPage() {
               onChange={setField("email")}
             />
 
-            <Label text="Phone number"  />
+            <Label text="Phone number" />
             <div style={styles.phoneRow}>
               <select
                 value={form.countryCode}
@@ -482,7 +482,7 @@ export default function EmailSignupPage() {
 
             {/* Terms */}
             <div style={styles.checkRow} onClick={() => setAgreed((a) => !a)}>
-              <div style={{ ...styles.checkbox, borderColor: agreed ? "#3b6ef8" : "#d1d5db", background: agreed ? "#3b6ef8" : "#fff" }}>
+              <div style={{ ...styles.checkbox, borderColor: agreed ? "var(--blue)" : "#d1d5db", background: agreed ? "var(--blue)" : "#fff" }}>
                 {agreed && (
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
                     <polyline points="20 6 9 17 4 12" />
@@ -593,7 +593,7 @@ const styles: Record<string, React.CSSProperties> = {
   logoIcon: {
     width: 36,
     height: 36,
-    background: "#3b6ef8",
+    background: "var(--blue)",
     borderRadius: 10,
     display: "flex",
     alignItems: "center",
@@ -686,7 +686,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   methodBtnActive: {
     background: "#eef2ff",
-    color: "#3b6ef8",
+    color: "var(--blue)",
     outline: "1.5px solid #c7d4fd",
   },
   footer: {
@@ -696,7 +696,7 @@ const styles: Record<string, React.CSSProperties> = {
     margin: "8px 0 0",
   },
   link: {
-    color: "#3b6ef8",
+    color: "var(--blue)",
     fontWeight: 600,
     cursor: "pointer",
   },
@@ -741,7 +741,9 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100%",
     padding: "12px 14px",
     borderRadius: 12,
-    border: "1.5px solid #e8ecf4",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "#e8ecf4",
     fontSize: 14,
     color: "#1a1a2e",
     outline: "none",
@@ -755,7 +757,9 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100%",
     padding: "12px 14px",
     borderRadius: 12,
-    border: "1.5px solid #e8ecf4",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "#e8ecf4",
     fontSize: 14,
     background: "#fafbff",
     outline: "none",
@@ -774,7 +778,9 @@ const styles: Record<string, React.CSSProperties> = {
   countrySelect: {
     padding: "12px 10px",
     borderRadius: 12,
-    border: "1.5px solid #e8ecf4",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "#e8ecf4",
     fontSize: 13,
     color: "#1a1a2e",
     background: "#fafbff",
@@ -788,7 +794,7 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "14px",
     borderRadius: 12,
     border: "none",
-    background: "#3b6ef8",
+    background: "var(--blue)",
     color: "#fff",
     fontSize: 15,
     fontWeight: 600,
@@ -842,7 +848,8 @@ const styles: Record<string, React.CSSProperties> = {
     width: 18,
     height: 18,
     borderRadius: 5,
-    border: "1.5px solid",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -869,7 +876,7 @@ const styles: Record<string, React.CSSProperties> = {
     width: 64,
     height: 64,
     borderRadius: "50%",
-    background: "#3b6ef8",
+    background: "var(--blue)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

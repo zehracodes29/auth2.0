@@ -64,7 +64,7 @@ export default function LoginPage() {
             onMouseLeave={() => setHoveredBtn(null)}
           >
             <div style={{ ...styles.btnIconWrap, background: "#eef2ff" }}>
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#3b6ef8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
                 <line x1="12" y1="18" x2="12.01" y2="18" />
               </svg>
@@ -87,7 +87,7 @@ export default function LoginPage() {
             onMouseLeave={() => setHoveredBtn(null)}
           >
             <div style={{ ...styles.btnIconWrap, background: "#eef2ff" }}>
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#3b6ef8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
@@ -175,7 +175,7 @@ const styles: Record<string, React.CSSProperties> = {
   logoIcon: {
     width: 38,
     height: 38,
-    background: "#3b6ef8",
+    background: "var(--blue)",
     borderRadius: 11,
     display: "flex",
     alignItems: "center",
@@ -213,7 +213,9 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100%",
     padding: "15px 18px",
     borderRadius: 14,
-    border: "1.5px solid #e8ecf4",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "#e8ecf4",
     background: "#fff",
     display: "flex",
     alignItems: "center",
@@ -274,7 +276,7 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: 12,
     border: "1.5px solid #d0daff",
     background: "#eef2ff",
-    color: "#3b6ef8",
+    color: "var(--blue)",
     fontSize: 15,
     fontWeight: 600,
     cursor: "pointer",
@@ -290,7 +292,7 @@ const styles: Record<string, React.CSSProperties> = {
     lineHeight: 1.6,
   },
   footerLink: {
-    color: "#3b6ef8",
+    color: "var(--blue)",
     fontWeight: 500,
     cursor: "pointer",
   },

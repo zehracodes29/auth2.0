@@ -72,7 +72,7 @@ function Input({
       onBlur={() => setFocused(false)}
       style={{
         ...styles.input,
-        borderColor: focused ? "#3b6ef8" : "#e8ecf4",
+        borderColor: focused ? "var(--blue)" : "#e8ecf4",
         boxShadow: focused ? "0 0 0 3px rgba(59,110,248,0.1)" : "none",
       }}
     />
@@ -97,7 +97,7 @@ function SelectField({
       onBlur={() => setFocused(false)}
       style={{
         ...styles.select,
-        borderColor: focused ? "#3b6ef8" : "#e8ecf4",
+        borderColor: focused ? "var(--blue)" : "#e8ecf4",
         boxShadow: focused ? "0 0 0 3px rgba(59,110,248,0.1)" : "none",
         color: value ? "#1a1a2e" : "#aab4c8",
       }}
@@ -170,7 +170,7 @@ export default function SignupPage() {
                 key={s}
                 style={{
                   ...styles.progressStep,
-                  background: progressStep >= s ? "#3b6ef8" : "#e8ecf4",
+                  background: progressStep >= s ? "var(--blue)" : "#e8ecf4",
                   flex: s === 2 ? 2 : 1,
                 }}
               />
@@ -379,7 +379,7 @@ export default function SignupPage() {
                   onKeyDown={(e) => handleOtpKeyDown(i, e)}
                   style={{
                     ...styles.otpBox,
-                    borderColor: digit ? "#3b6ef8" : "#e2e8f0",
+                    borderColor: digit ? "var(--blue)" : "#e2e8f0",
                     background: digit ? "#eef2ff" : "#fff",
                   }}
                 />
@@ -437,7 +437,7 @@ const styles: Record<string, React.CSSProperties> = {
   logoIcon: {
     width: 36,
     height: 36,
-    background: "#3b6ef8",
+    background: "var(--blue)",
     borderRadius: 10,
     display: "flex",
     alignItems: "center",
@@ -482,7 +482,9 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100%",
     padding: "13px 20px",
     borderRadius: 12,
-    border: "1.5px solid #e8ecf4",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "#e8ecf4",
     background: "#fff",
     display: "flex",
     alignItems: "center",
@@ -531,7 +533,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   methodBtnActive: {
     background: "#eef2ff",
-    color: "#3b6ef8",
+    color: "var(--blue)",
     outline: "1.5px solid #c7d4fd",
   },
   footer: {
@@ -541,7 +543,7 @@ const styles: Record<string, React.CSSProperties> = {
     margin: "8px 0 0",
   },
   link: {
-    color: "#3b6ef8",
+    color: "var(--blue)",
     fontWeight: 600,
     cursor: "pointer",
   },
@@ -586,7 +588,9 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100%",
     padding: "12px 14px",
     borderRadius: 12,
-    border: "1.5px solid #e8ecf4",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "#e8ecf4",
     fontSize: 14,
     color: "#1a1a2e",
     outline: "none",
@@ -600,7 +604,9 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100%",
     padding: "12px 14px",
     borderRadius: 12,
-    border: "1.5px solid #e8ecf4",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "#e8ecf4",
     fontSize: 14,
     background: "#fafbff",
     outline: "none",
@@ -619,7 +625,9 @@ const styles: Record<string, React.CSSProperties> = {
   countrySelect: {
     padding: "12px 10px",
     borderRadius: 12,
-    border: "1.5px solid #e8ecf4",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "#e8ecf4",
     fontSize: 13,
     color: "#1a1a2e",
     background: "#fafbff",
@@ -633,7 +641,7 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "14px",
     borderRadius: 12,
     border: "none",
-    background: "#3b6ef8",
+    background: "var(--blue)",
     color: "#fff",
     fontSize: 15,
     fontWeight: 600,
@@ -644,7 +652,9 @@ const styles: Record<string, React.CSSProperties> = {
   },
   summaryCard: {
     background: "#f8faff",
-    border: "1.5px solid #e8ecf4",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "#e8ecf4",
     borderRadius: 14,
     padding: "4px 16px",
     marginBottom: 20,
@@ -679,7 +689,9 @@ const styles: Record<string, React.CSSProperties> = {
     width: 46,
     height: 52,
     borderRadius: 12,
-    border: "1.5px solid #e2e8f0",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "#e2e8f0",
     textAlign: "center",
     fontSize: 20,
     fontWeight: 700,

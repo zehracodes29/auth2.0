@@ -4,10 +4,6 @@ import { useState, useEffect } from "react";
 type SignupMethod = "email" | "phone" | null;
 type Step = "choose" | "form" | "verify";
 
-const BLUE_PRIMARY = "#2563EB";
-const BLUE_LIGHT = "#EFF6FF";
-const BLUE_MID = "#3B82F6";
-const BLUE_DARK = "#1D4ED8";
 
 const styles = `
   /* Background ripples */
@@ -429,13 +425,13 @@ export default function SignupPage() {
       </svg>
 
       <svg className="fingerprint" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="50" cy="50" rx="48" ry="48" fill="none" stroke="#2563EB" strokeWidth="1.2" />
-        <ellipse cx="50" cy="50" rx="38" ry="39" fill="none" stroke="#2563EB" strokeWidth="1.2" />
-        <ellipse cx="50" cy="50" rx="28" ry="30" fill="none" stroke="#2563EB" strokeWidth="1.2" />
-        <ellipse cx="50" cy="50" rx="18" ry="20" fill="none" stroke="#2563EB" strokeWidth="1.2" />
-        <ellipse cx="50" cy="50" rx="8" ry="10" fill="none" stroke="#2563EB" strokeWidth="1.2" />
-        <line x1="50" y1="2" x2="50" y2="18" stroke="#2563EB" strokeWidth="1.2" />
-        <line x1="50" y1="82" x2="50" y2="98" stroke="#2563EB" strokeWidth="1.2" />
+        <ellipse cx="50" cy="50" rx="48" ry="48" fill="none" stroke="var(--blue)" strokeWidth="1.2" />
+        <ellipse cx="50" cy="50" rx="38" ry="39" fill="none" stroke="var(--blue)" strokeWidth="1.2" />
+        <ellipse cx="50" cy="50" rx="28" ry="30" fill="none" stroke="var(--blue)" strokeWidth="1.2" />
+        <ellipse cx="50" cy="50" rx="18" ry="20" fill="none" stroke="var(--blue)" strokeWidth="1.2" />
+        <ellipse cx="50" cy="50" rx="8" ry="10" fill="none" stroke="var(--blue)" strokeWidth="1.2" />
+        <line x1="50" y1="2" x2="50" y2="18" stroke="var(--blue)" strokeWidth="1.2" />
+        <line x1="50" y1="82" x2="50" y2="98" stroke="var(--blue)" strokeWidth="1.2" />
       </svg>
 
       <div className="page">
@@ -464,7 +460,7 @@ export default function SignupPage() {
                 Redirecting to onboarding...
               </p>
               <div style={{ marginTop: 20, display: "flex", justifyContent: "center" }}>
-                <div className="spinner" style={{ borderTopColor: BLUE_PRIMARY, border: `2px solid #E2E8F0`, borderTopWidth: 2 }}></div>
+                <div className="spinner" style={{ borderTopColor: "var(--blue)", border: `2px solid var(--border)`, borderTopWidth: 2 }}></div>
               </div>
             </div>
           ) : (

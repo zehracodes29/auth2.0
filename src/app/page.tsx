@@ -99,7 +99,7 @@ export default function MainPage() {
       display: flex; align-items: center; justify-content: center;
       font-size: 8px; color: white; font-weight: 700;
     }
-    .av1 { width: 56px; height: 56px; top: 22%; right: 11%; animation-duration: 7s;  animation-delay: 0s;   background: #DBEAFE; }
+    .av1 { width: 56px; height: 56px; top: 22%; right: 11%; animation-duration: 7s;  animation-delay: 0s;   background: var(--blue-pale); }
     .av2 { width: 46px; height: 46px; top: 45%; right: 5%;  animation-duration: 9s;  animation-delay: 1.8s; background: #EDE9FE; }
     .av3 { width: 50px; height: 50px; top: 68%; right: 13%; animation-duration: 8s;  animation-delay: 0.9s; background: #D1FAE5; }
     .av4 { width: 42px; height: 42px; top: 33%; left: 6%;   animation-duration: 10s; animation-delay: 2.2s; background: #FEF3C7; }
@@ -406,10 +406,10 @@ export default function MainPage() {
 
         <svg className="fingerprint" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
           {[54, 46, 38, 30, 22, 14, 6].map((r, i) => (
-            <ellipse key={i} cx="60" cy="60" rx={r} ry={r + 2.5} fill="none" stroke="#2563EB" strokeWidth="1.4" />
+            <ellipse key={i} cx="60" cy="60" rx={r} ry={r + 2.5} fill="none" stroke="var(--blue)" strokeWidth="1.4" />
           ))}
-          <line x1="60" y1="2" x2="60" y2="14" stroke="#2563EB" strokeWidth="1.4" />
-          <line x1="60" y1="106" x2="60" y2="118" stroke="#2563EB" strokeWidth="1.4" />
+          <line x1="60" y1="2" x2="60" y2="14" stroke="var(--blue)" strokeWidth="1.4" />
+          <line x1="60" y1="106" x2="60" y2="118" stroke="var(--blue)" strokeWidth="1.4" />
         </svg>
 
         <div className="avatar av1">👩‍💼<div className="check">✓</div></div>

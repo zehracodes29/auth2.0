@@ -11,7 +11,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
     font-family: 'DM Sans', sans-serif;
     background: var(--white);
     color: var(--text);
@@ -23,7 +24,8 @@
   *,
   *::before,
   *::after {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: var(--ring);
     box-sizing: border-box;
   }
 }
