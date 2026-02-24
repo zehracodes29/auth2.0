@@ -431,10 +431,12 @@ export default function MainPage() {
         </a>
 
         <div className="nav-links">
+          <a href="/about">About</a>
           <a href="#">Product</a>
           <a href="#">Solutions</a>
           <a href="#">Pricing</a>
           <a href="#">Docs</a>
+          <a href="/contact">Contact</a>
         </div>
       </nav>
 
