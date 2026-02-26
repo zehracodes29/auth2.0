@@ -289,6 +289,31 @@ export default function MainPage() {
     }
     .btn-signup:hover .arr { transform: translateX(4px); }
 
+    .btn-services {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 17px 36px;
+      background: var(--blue-light);
+      color: var(--blue);
+      border: 1.5px solid var(--blue-pale);
+      border-radius: 15px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.24s cubic-bezier(0.22,1,0.36,1);
+    }
+    .btn-services:hover {
+      background: var(--blue);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(37,99,235,0.2);
+      border-color: var(--blue);
+    }
+    .btn-services:active { transform: translateY(-1px); }
+
     .btn-login {
       display: inline-flex;
       align-items: center;
@@ -384,7 +409,7 @@ export default function MainPage() {
       nav { padding: 20px 22px; }
       .nav-links { display: none; }
       .cta-group { flex-direction: column; width: 100%; }
-      .btn-signup, .btn-login { width: 100%; justify-content: center; }
+      .btn-signup, .btn-login, .btn-services { width: 100%; justify-content: center; }
       .stats { flex-wrap: wrap; }
       .stat { border-right: none; border-bottom: 1px solid var(--border); max-width: 100%; }
       .av4 { display: none; }
@@ -433,7 +458,7 @@ export default function MainPage() {
         <div className="nav-links">
           <a href="/about">About</a>
           <a href="#">Product</a>
-          <a href="#">Solutions</a>
+          <a href="/services">Solutions</a>
           <a href="#">Pricing</a>
           <a href="#">Docs</a>
           <a href="/contact">Contact</a>
@@ -462,6 +487,15 @@ export default function MainPage() {
                 <path d="M3.5 8.5h10M9.5 4.5l4 4-4 4" stroke="white" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
+          </a>
+
+          <a href="/services" className="btn-services">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            Our Services
           </a>
 
           <a href="/login" className="btn-login">
