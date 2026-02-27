@@ -40,73 +40,7 @@ export default function MainPage() {
       to   { transform: translate(28px, 18px) scale(1.09); }
     }
 
-    /* Ripple rings */
-    .ripples {
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 780px; height: 780px;
-    }
-    .ripples circle {
-      fill: none;
-      stroke: var(--blue);
-      stroke-width: 0.8;
-      opacity: 0;
-      transform-origin: 390px 390px;
-      animation: ripple 6s ease-out infinite;
-    }
-    .ripples circle:nth-child(1) { animation-delay: 0s; }
-    .ripples circle:nth-child(2) { animation-delay: 1.2s; }
-    .ripples circle:nth-child(3) { animation-delay: 2.4s; }
-    .ripples circle:nth-child(4) { animation-delay: 3.6s; }
-    .ripples circle:nth-child(5) { animation-delay: 4.8s; }
-    @keyframes ripple {
-      0%   { r: 60;  opacity: 0.2; }
-      100% { r: 390; opacity: 0; }
-    }
-
-    /* Fingerprint */
-    .fingerprint {
-      position: absolute;
-      bottom: -40px; left: -40px;
-      width: 300px; height: 300px;
-      opacity: 0.055;
-      animation: fpBreath 7s ease-in-out infinite;
-    }
-    @keyframes fpBreath {
-      0%, 100% { opacity: 0.055; transform: scale(1); }
-      50%       { opacity: 0.09;  transform: scale(1.04); }
-    }
-
-    /* Floating avatars */
-    .avatar {
-      position: absolute;
-      border-radius: 50%;
-      border: 3px solid var(--white);
-      box-shadow: 0 4px 20px rgba(37,99,235,0.18), 0 1px 4px rgba(0,0,0,0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      animation: floatBob ease-in-out infinite;
-    }
-    .avatar .check {
-      position: absolute;
-      bottom: -1px; right: -1px;
-      width: 16px; height: 16px;
-      background: var(--success);
-      border-radius: 50%;
-      border: 2px solid white;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 8px; color: white; font-weight: 700;
-    }
-    .av1 { width: 56px; height: 56px; top: 22%; right: 11%; animation-duration: 7s;  animation-delay: 0s;   background: var(--blue-pale); }
-    .av2 { width: 46px; height: 46px; top: 45%; right: 5%;  animation-duration: 9s;  animation-delay: 1.8s; background: #EDE9FE; }
-    .av3 { width: 50px; height: 50px; top: 68%; right: 13%; animation-duration: 8s;  animation-delay: 0.9s; background: #D1FAE5; }
-    .av4 { width: 42px; height: 42px; top: 33%; left: 6%;   animation-duration: 10s; animation-delay: 2.2s; background: #FEF3C7; }
-    @keyframes floatBob {
-      0%, 100% { transform: translateY(0px) rotate(-1.5deg); }
-      50%       { transform: translateY(-16px) rotate(1.5deg); }
-    }
+    /* Decorative removed in favor of hero image */
 
     /* ─── Nav ─── */
     nav {
@@ -172,11 +106,35 @@ export default function MainPage() {
       z-index: 1;
       min-height: calc(100vh - 92px);
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      padding: 40px 52px 100px;
+      max-width: 1400px;
+      margin: 0 auto;
+      gap: 60px;
+    }
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 600px;
+    }
+    .hero-visual {
+      flex: 1;
+      display: flex;
       justify-content: center;
-      text-align: center;
-      padding: 40px 24px 100px;
+      align-items: center;
+      position: relative;
+      animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.55s both;
+    }
+    .hero-visual img {
+      width: 100%;
+      max-width: 650px;
+      height: auto;
+      border-radius: 20px;
     }
 
     .badge {
@@ -209,11 +167,11 @@ export default function MainPage() {
 
     h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(46px, 7.5vw, 80px);
+      font-size: clamp(40px, 5.5vw, 68px);
       line-height: 1.06;
-      letter-spacing: -2.5px;
+      letter-spacing: -2px;
       color: var(--text);
-      max-width: 780px;
+      max-width: 100%;
       margin-bottom: 24px;
       animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.25s both;
     }
@@ -244,6 +202,7 @@ export default function MainPage() {
       align-items: center;
       gap: 14px;
       animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.45s both;
+      flex-wrap: wrap;
     }
 
     .btn-signup {
@@ -405,6 +364,21 @@ export default function MainPage() {
       font-weight: 500;
     }
 
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 24px 80px;
+        gap: 40px;
+      }
+      .hero-content {
+        align-items: center;
+      }
+      h1 { font-size: clamp(38px, 8vw, 60px); }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .cta-group { justify-content: center; }
+    }
+
     @media (max-width: 640px) {
       nav { padding: 20px 22px; }
       .nav-links { display: none; }
@@ -412,7 +386,6 @@ export default function MainPage() {
       .btn-signup, .btn-login, .btn-services { width: 100%; justify-content: center; }
       .stats { flex-wrap: wrap; }
       .stat { border-right: none; border-bottom: 1px solid var(--border); max-width: 100%; }
-      .av4 { display: none; }
     }
   `;
 
@@ -424,23 +397,6 @@ export default function MainPage() {
       <div className="bg">
         <div className="bg-glow-tr" />
         <div className="bg-glow-bl" />
-
-        <svg className="ripples" viewBox="0 0 780 780" xmlns="http://www.w3.org/2000/svg">
-          {[0, 1, 2, 3, 4].map(i => <circle key={i} cx="390" cy="390" r="60" />)}
-        </svg>
-
-        <svg className="fingerprint" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-          {[54, 46, 38, 30, 22, 14, 6].map((r, i) => (
-            <ellipse key={i} cx="60" cy="60" rx={r} ry={r + 2.5} fill="none" stroke="var(--blue)" strokeWidth="1.4" />
-          ))}
-          <line x1="60" y1="2" x2="60" y2="14" stroke="var(--blue)" strokeWidth="1.4" />
-          <line x1="60" y1="106" x2="60" y2="118" stroke="var(--blue)" strokeWidth="1.4" />
-        </svg>
-
-        <div className="avatar av1">👩‍💼<div className="check">✓</div></div>
-        <div className="avatar av2">👨‍💻<div className="check">✓</div></div>
-        <div className="avatar av3">👩‍🔬<div className="check">✓</div></div>
-        <div className="avatar av4">🧑‍💼<div className="check">✓</div></div>
       </div>
 
       {/* Nav */}
@@ -466,39 +422,45 @@ export default function MainPage() {
 
       {/* Hero */}
       <main className="hero">
+        <div className="hero-content">
+          <h1>
+            There's a <em>better</em> way<br />
+            to verify your<br />
+            customers.
+          </h1>
 
-        <h1>
-          There's a <em>better</em> way<br />
-          to verify your<br />
-          customers.
-        </h1>
+          <p className="hero-sub">
+            Smarter anti-fraud and compliance solutions for fast-growing businesses. Verify in seconds, not days.
+          </p>
 
-        <p className="hero-sub">
-          Smarter anti-fraud and compliance solutions for fast-growing businesses. Verify in seconds, not days.
-        </p>
+          {/* THE TWO BUTTONS */}
+          <div className="cta-group">
+            <a href="/signup" className="btn-signup">
+              Get Started — It's Free
+              <span className="arr">
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+                  <path d="M3.5 8.5h10M9.5 4.5l4 4-4 4" stroke="white" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </a>
 
-        {/* THE TWO BUTTONS */}
-        <div className="cta-group">
-          <a href="/signup" className="btn-signup">
-            Get Started — It's Free
-            <span className="arr">
-              <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
-                <path d="M3.5 8.5h10M9.5 4.5l4 4-4 4" stroke="white" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+            <a href="/services" className="btn-services">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
               </svg>
-            </span>
-          </a>
-
-          <a href="/services" className="btn-services">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-              <polyline points="2 17 12 22 22 17"></polyline>
-              <polyline points="2 12 12 17 22 12"></polyline>
-            </svg>
-            Our Services
-          </a>
-
+              Our Services
+            </a>
+          </div>
         </div>
 
+        <div className="hero-visual">
+          <img
+            src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif"
+            alt="Hero visualization"
+          />
+        </div>
       </main>
 
       {/* Stats strip */}

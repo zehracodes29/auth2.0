@@ -185,8 +185,8 @@ export default function ServicesPage() {
     .services-grid {
         display: flex;
         flex-direction: column;
-        gap: 80px;
-        margin-top: 40px;
+        gap: 160px;
+        margin-top: 60px;
     }
 
     /* ─── Service Card Row ─── */
@@ -413,7 +413,7 @@ export default function ServicesPage() {
 
     /* ─── CTA Section ─── */
     .cta-section {
-        margin-top: 100px;
+        margin-top: 160px;
         text-align: center;
         padding: 60px 40px;
         background: linear-gradient(180deg, rgba(239,246,255,0) 0%, rgba(239,246,255,1) 100%);
@@ -478,7 +478,7 @@ export default function ServicesPage() {
         }
         .nav-header { padding: 20px; }
         .services-title { font-size: 32px; }
-        .services-grid { gap: 60px; }
+        .services-grid { gap: 100px; }
         .cta-section { padding: 40px 20px; }
     }
     `;
@@ -531,11 +531,6 @@ export default function ServicesPage() {
                                 <li>Employee background screening</li>
                                 <li>Financial compliance & lending</li>
                             </ul>
-                            <div className="pricing-badge">
-                                <span>Starts from</span>
-                                <span className="pricing-val">₹4.50</span>
-                                <span>/ check</span>
-                            </div>
                         </div>
                         <div className="service-visual">
                             <div className="mockup-card">
@@ -586,11 +581,6 @@ export default function ServicesPage() {
                                 <li>Alternative identity proofing</li>
                                 <li>Address confirmation</li>
                             </ul>
-                            <div className="pricing-badge">
-                                <span>Starts from</span>
-                                <span className="pricing-val">₹3.00</span>
-                                <span>/ check</span>
-                            </div>
                         </div>
                         <div className="service-visual">
                             <div className="mockup-card">
@@ -636,11 +626,6 @@ export default function ServicesPage() {
                                 <li>Vehicle rental authorization</li>
                                 <li>Logistics hiring</li>
                             </ul>
-                            <div className="pricing-badge">
-                                <span>Starts from</span>
-                                <span className="pricing-val">₹5.00</span>
-                                <span>/ check</span>
-                            </div>
                         </div>
                         <div className="service-visual">
                             <div className="mockup-card">
