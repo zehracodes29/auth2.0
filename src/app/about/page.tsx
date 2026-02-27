@@ -6,12 +6,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function AboutPage() {
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
     return (
         <div style={styles.bg}>
             {/* Subtle background blobs */}
@@ -37,16 +31,12 @@ export default function AboutPage() {
             </div>
 
             <div style={styles.container}>
-                <div style={{ ...styles.grid, ...(isClient && window.innerWidth < 800 ? styles.gridMobile : {}) }}>
-                    {/* Mission Statement - Left */}
-                    <div style={styles.leftCol}>
-                        <Mission />
-                    </div>
+                <div style={styles.contentStack}>
+                    {/* Mission Details */}
+                    <Mission />
 
-                    {/* Why Sahihai - Right */}
-                    <div style={styles.rightCol}>
-                        <WhySahihai />
-                    </div>
+                    {/* Why Sahihai */}
+                    <WhySahihai />
                 </div>
             </div>
         </div>
@@ -129,9 +119,10 @@ const styles: Record<string, React.CSSProperties> = {
     container: {
         flex: 1,
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        padding: "40px 24px 60px",
+        justifyContent: "flex-start",
+        padding: "40px 24px 80px",
         position: "relative",
         zIndex: 1,
         maxWidth: 1100,
@@ -139,25 +130,12 @@ const styles: Record<string, React.CSSProperties> = {
         width: "100%",
         boxSizing: "border-box",
     },
-    grid: {
+    contentStack: {
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
         gap: 64,
         width: "100%",
-        alignItems: "center",
-    },
-    gridMobile: {
-        flexDirection: "column",
-        gap: 48,
-    },
-    leftCol: {
-        flex: "1 1 50%",
-        minWidth: 300,
-    },
-    rightCol: {
-        flex: "1 1 50%",
-        minWidth: 320,
-        display: "flex",
-        justifyContent: "center",
+        maxWidth: 800,
+        alignItems: "stretch",
     },
 };

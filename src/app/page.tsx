@@ -457,10 +457,9 @@ export default function MainPage() {
 
         <div className="nav-links">
           <a href="/about">About</a>
-          <a href="#">Product</a>
           <a href="/services">Solutions</a>
           <a href="#">Pricing</a>
-          <a href="#">Docs</a>
+          <a href="/login">Login</a>
           <a href="/contact">Contact</a>
         </div>
       </nav>
@@ -498,13 +497,6 @@ export default function MainPage() {
             Our Services
           </a>
 
-          <a href="/login" className="btn-login">
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
-              <rect x="2.5" y="2.5" width="12" height="12" rx="3" stroke="currentColor" strokeWidth="1.6" />
-              <path d="M6.5 8.5h4M9 6l2.5 2.5L9 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Sign In
-          </a>
         </div>
 
       </main>

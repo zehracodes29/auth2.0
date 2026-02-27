@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Mission() {
     return (
         <div style={styles.container}>
@@ -10,8 +8,7 @@ export default function Mission() {
 
             {/* Main Statement */}
             <h2 style={styles.heading}>
-                Empowering businesses with
-                <span style={styles.highlight}> seamless identity verification.</span>
+                Building the definitive trust infrastructure for the modern internet.
             </h2>
 
             {/* Description */}
@@ -20,34 +17,21 @@ export default function Mission() {
                     At SahiHai, we believe that trust is the foundation of every successful digital interaction. In a world where digital fraud is constantly evolving, businesses need robust, reliable, and swift verification systems to protect both themselves and their users.
                 </p>
                 <p style={styles.paragraph}>
-                    Our mission is to democratize access to enterprise-grade identity verification. By combining advanced AI, comprehensive global data sources, and an uncompromising focus on user experience, we are building the definitive trust infrastructure for the modern internet. We make it easy to be secure, so you can focus on building what matters.
+                    Our vision goes beyond just verification. We are building an ecosystem where authentic identity is seamlessly verified without comprising privacy or user experience. The future of the digital economy depends on the ability to interact with absolute certainty.
                 </p>
-            </div>
 
-            {/* Stats/Metrics */}
-            <div style={styles.statsGrid}>
-                <div style={styles.statCard}>
-                    <div style={styles.statNumber}>180+</div>
-                    <div style={styles.statLabel}>Countries Covered</div>
-                </div>
-                <div style={styles.statCard}>
-                    <div style={styles.statNumber}>99.9%</div>
-                    <div style={styles.statLabel}>Uptime SLA</div>
-                </div>
-                <div style={styles.statCard}>
-                    <div style={styles.statNumber}>&lt;2s</div>
-                    <div style={styles.statLabel}>Avg Processing Time</div>
-                </div>
-            </div>
-
-            {/* Link to full Mission page */}
-            <div style={styles.btnWrap}>
-                <Link href="/mission" style={styles.missionBtn}>
-                    Read Our Full Mission
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </Link>
+                <h3 style={styles.subheading}>Core Values</h3>
+                <ul style={styles.list}>
+                    <li style={styles.listItem}>
+                        <strong>Security First:</strong> Protecting data is our highest priority, utilizing end-to-end encryption and compliance-first practices.
+                    </li>
+                    <li style={styles.listItem}>
+                        <strong>User Centricity:</strong> Authentication shouldn't come at the cost of conversion. We strive for frictionless flows.
+                    </li>
+                    <li style={styles.listItem}>
+                        <strong>Inclusivity:</strong> A global product serving global citizens, providing equitable access to services by recognizing diverse identity documents.
+                    </li>
+                </ul>
             </div>
         </div>
     );
@@ -81,63 +65,23 @@ const styles: Record<string, React.CSSProperties> = {
         lineHeight: 1.15,
         letterSpacing: "-0.8px",
     },
-    highlight: {
-        color: "var(--blue)",
+    subheading: {
+        fontSize: 22,
+        fontWeight: 700,
+        color: "#1a1a2e",
+        marginTop: 24,
+        marginBottom: 8,
     },
-    contentWrap: {
+    list: {
+        paddingLeft: 20,
+        margin: 0,
         display: "flex",
         flexDirection: "column",
-        gap: 16,
-        marginTop: 8,
+        gap: 12,
     },
-    paragraph: {
+    listItem: {
         fontSize: 16,
         color: "#5c677d",
-        margin: 0,
-        lineHeight: 1.7,
-    },
-    statsGrid: {
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-        gap: 16,
-        marginTop: 24,
-    },
-    statCard: {
-        background: "#fff",
-        padding: "20px",
-        borderRadius: 16,
-        border: "1px solid #e8ecf4",
-        boxShadow: "0 4px 12px rgba(59,110,248,0.03)",
-        display: "flex",
-        flexDirection: "column",
-        gap: 4,
-    },
-    statNumber: {
-        fontSize: 28,
-        fontWeight: 800,
-        color: "var(--blue)",
-        letterSpacing: "-1px",
-    },
-    statLabel: {
-        fontSize: 13,
-        fontWeight: 600,
-        color: "#7a8599",
-    },
-    btnWrap: {
-        marginTop: 16,
-    },
-    missionBtn: {
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 8,
-        padding: "12px 24px",
-        background: "var(--blue)",
-        color: "#fff",
-        borderRadius: 12,
-        fontSize: 15,
-        fontWeight: 600,
-        textDecoration: "none",
-        transition: "transform 0.2s, box-shadow 0.2s",
-        boxShadow: "0 4px 14px rgba(59,110,248,0.25)",
-    },
+        lineHeight: 1.6,
+    }
 };
