@@ -1,5 +1,10 @@
 'use client';
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { z } from "zod";
+
+const phoneSchema = z.object({
+    phone: z.string().regex(/^\d{10}$/, "Please enter a valid 10-digit phone number")
+});
 
 export default function PhoneLogin({ onBack }: { onBack: () => void }) {
     const [step, setStep] = useState<"phone" | "otp">("phone");
@@ -7,11 +12,33 @@ export default function PhoneLogin({ onBack }: { onBack: () => void }) {
     const [otp, setOtp] = useState(["", "", "", "", "", ""]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const [countdown, setCountdown] = useState(30);
+
+    useEffect(() => {
+        let timer: NodeJS.Timeout;
+        if (step === "otp" && countdown > 0) {
+            timer = setTimeout(() => setCountdown(c => c - 1), 1000);
+        }
+        return () => clearTimeout(timer);
+    }, [step, countdown]);
+
+    const handleResend = () => {
+        if (countdown === 0 && phone.length >= 10) {
+            setLoading(true);
+            setError("");
+            setTimeout(() => {
+                setLoading(false);
+                setCountdown(30);
+                setOtp(["", "", "", "", "", ""]);
+            }, 1200);
+        }
+    };
 
     const handlePhoneSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (phone.length < 10) {
-            setError("Please enter a valid 10-digit phone number.");
+        const result = phoneSchema.safeParse({ phone });
+        if (!result.success) {
+            setError(result.error.issues[0].message);
             return;
         }
         setError("");
@@ -20,6 +47,7 @@ export default function PhoneLogin({ onBack }: { onBack: () => void }) {
         setTimeout(() => {
             setLoading(false);
             setStep("otp");
+            setCountdown(30);
         }, 1200);
     };
 
@@ -72,7 +100,7 @@ export default function PhoneLogin({ onBack }: { onBack: () => void }) {
             </div>
 
             {step === "phone" ? (
-                <form onSubmit={handlePhoneSubmit} style={styles.formContainer}>
+                <form onSubmit={handlePhoneSubmit} style={styles.formContainer} noValidate>
                     <div style={styles.inputGroup}>
                         <label style={styles.label}>Phone Number</label>
                         <div style={styles.phoneWrapper}>
@@ -140,7 +168,16 @@ export default function PhoneLogin({ onBack }: { onBack: () => void }) {
                     </button>
 
                     <p style={{ ...styles.footerNote, marginTop: 16 }}>
-                        Didn't receive code? <span style={styles.footerLink}>Resend</span>
+                        Didn't receive code?{" "}
+                        {countdown > 0 ? (
+                            <span style={{ ...styles.footerLink, color: "#b0bac9", cursor: "not-allowed" }}>
+                                Resend in {countdown}s
+                            </span>
+                        ) : (
+                            <span style={styles.footerLink} onClick={handleResend}>
+                                Resend
+                            </span>
+                        )}
                     </p>
                 </form>
             )}

@@ -40,6 +40,29 @@ export default function MainPage() {
       to   { transform: translate(28px, 18px) scale(1.09); }
     }
 
+    /* Floating 3D Elements */
+    .floating-el {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.65;
+      animation: floatElement ease-in-out infinite alternate;
+    }
+    
+    .el-1 { top: 8%; left: 12%; width: 220px; animation-duration: 14s; opacity: 0.9; }
+    .el-2 { top: 25%; right: 6%; width: 280px; animation-duration: 18s; animation-direction: alternate-reverse; opacity: 0.6; filter: blur(2px); z-index: 0; }
+    .el-3 { bottom: 12%; left: 18%; width: 250px; animation-duration: 16s; opacity: 0.9; }
+    .el-4 { bottom: 18%; right: 12%; width: 200px; animation-duration: 12s; opacity: 0.85; }
+    .el-5 { top: 10%; right: 28%; width: 190px; animation-duration: 15s; filter: blur(1px); opacity: 0.7; z-index: 0; }
+    .el-6 { top: 50%; left: 2%; width: 160px; animation-duration: 13s; opacity: 0.8; }
+    .el-7 { bottom: 2%; left: 45%; width: 220px; animation-duration: 17s; filter: blur(3px); opacity: 0.5; z-index: 0; }
+
+    @keyframes floatElement {
+      0% { transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); }
+      50% { transform: translateY(-20px) translateX(10px) rotate(5deg) scale(1.05); }
+      100% { transform: translateY(15px) translateX(-15px) rotate(-5deg) scale(0.95); }
+    }
+
     /* Decorative removed in favor of hero image */
 
     /* ─── Nav ─── */
@@ -74,7 +97,7 @@ export default function MainPage() {
     .logo:hover .logo-icon { transform: rotate(-6deg) scale(1.05); }
     .logo-name {
       font-family: 'DM Serif Display', serif;
-      font-size: 22px;
+      font-size: 22px;  
       color: var(--text);
       letter-spacing: -0.3px;
     }
@@ -106,35 +129,23 @@ export default function MainPage() {
       z-index: 1;
       min-height: calc(100vh - 92px);
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      text-align: left;
-      padding: 40px 52px 100px;
-      max-width: 1400px;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px 100px;
+      max-width: 1000px;
       margin: 0 auto;
-      gap: 60px;
+      gap: 40px;
     }
     .hero-content {
-      flex: 1;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      max-width: 600px;
+      align-items: center;
+      max-width: 800px;
     }
     .hero-visual {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.55s both;
-    }
-    .hero-visual img {
-      width: 100%;
-      max-width: 650px;
-      height: auto;
-      border-radius: 20px;
+      display: none;
     }
 
     .badge {
@@ -172,7 +183,8 @@ export default function MainPage() {
       letter-spacing: -2px;
       color: var(--text);
       max-width: 100%;
-      margin-bottom: 24px;
+      margin: 0 auto 24px auto;
+      text-align: center;
       animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.25s both;
     }
     h1 em {
@@ -186,7 +198,7 @@ export default function MainPage() {
       line-height: 1.7;
       color: var(--text-muted);
       max-width: 500px;
-      margin-bottom: 48px;
+      margin: 0 auto 48px auto;
       font-weight: 400;
       animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.35s both;
     }
@@ -200,6 +212,7 @@ export default function MainPage() {
     .cta-group {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 14px;
       animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.45s both;
       flex-wrap: wrap;
@@ -397,6 +410,13 @@ export default function MainPage() {
       <div className="bg">
         <div className="bg-glow-tr" />
         <div className="bg-glow-bl" />
+        <img className="floating-el el-1" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
+        <img className="floating-el el-2" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
+        <img className="floating-el el-3" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
+        <img className="floating-el el-4" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
+        <img className="floating-el el-5" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
+        <img className="floating-el el-6" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
+        <img className="floating-el el-7" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
       </div>
 
       {/* Nav */}
@@ -455,12 +475,7 @@ export default function MainPage() {
           </div>
         </div>
 
-        <div className="hero-visual">
-          <img
-            src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif"
-            alt="Hero visualization"
-          />
-        </div>
+
       </main>
 
       {/* Stats strip */}

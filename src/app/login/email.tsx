@@ -1,5 +1,11 @@
 'use client';
 import { useState } from "react";
+import { z } from "zod";
+
+const emailSchema = z.object({
+    email: z.string().email("Please enter a valid email address"),
+    password: z.string().min(1, "Password is required")
+});
 
 export default function EmailLogin({ onBack }: { onBack: () => void }) {
     const [email, setEmail] = useState("");
@@ -10,8 +16,9 @@ export default function EmailLogin({ onBack }: { onBack: () => void }) {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!email || !password) {
-            setError("Please fill in all fields.");
+        const result = emailSchema.safeParse({ email, password });
+        if (!result.success) {
+            setError(result.error.issues[0].message);
             return;
         }
         setError("");
@@ -38,7 +45,7 @@ export default function EmailLogin({ onBack }: { onBack: () => void }) {
                 <p style={styles.subtext}>Enter your credentials to access your account.</p>
             </div>
 
-            <form onSubmit={handleSubmit} style={styles.formContainer}>
+            <form onSubmit={handleSubmit} style={styles.formContainer} noValidate>
                 {/* Email */}
                 <div style={styles.inputGroup}>
                     <label style={styles.label}>Email Address</label>

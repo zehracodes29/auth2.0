@@ -459,6 +459,25 @@ export default function ServicesPage() {
         box-shadow: 0 8px 24px rgba(37,99,235,0.4);
     }
 
+    .cta-features {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 32px;
+        list-style: none;
+        padding: 0;
+    }
+
+    .cta-features li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        color: var(--text, #0F172A);
+        font-weight: 500;
+    }
+
     /* Animations */
     @keyframes fadeDown {
         from { opacity: 0; transform: translateY(-14px); }
@@ -480,6 +499,7 @@ export default function ServicesPage() {
         .services-title { font-size: 32px; }
         .services-grid { gap: 100px; }
         .cta-section { padding: 40px 20px; }
+        .cta-features { flex-direction: column; align-items: center; gap: 16px; }
     }
     `;
 
@@ -662,9 +682,19 @@ export default function ServicesPage() {
                 {/* CTA */}
                 <div className="cta-section">
                     <h2 className="cta-title">Ready to secure your business?</h2>
-                    <p className="cta-desc">
+                    <p className="cta-desc" style={{ marginBottom: "20px" }}>
                         Integrate our APIs in minutes. No complex paperwork. Start verifying your first 100 users for free.
                     </p>
+                    <ul className="cta-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="10" fill="#10B981" fillOpacity="0.1" /><path d="M14 7L8.5 12.5L6 10" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                            Responsive design
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="10" fill="#10B981" fillOpacity="0.1" /><path d="M14 7L8.5 12.5L6 10" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                            Activity
+                        </li>
+                    </ul>
                     <Link href="/signup" className="btn-primary">
                         Create an Account
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
