@@ -1,131 +1,59 @@
+import styles from './why.module.css';
+
 export default function WhySahihai() {
-    const reasons = [
-        {
-            title: "Bank-Grade Security",
-            description: "We employ military-grade encryption and strictly adhere to global compliance standards (GDPR, SOC2) to ensure your users' data never falls into the wrong hands.",
-            icon: (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-            )
-        },
-        {
-            title: "Seamless Integration",
-            description: "Our developer-first APIs and drop-in SDKs allow you to implement robust identity verification into your existing flows within hours, not weeks.",
-            icon: (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="16 18 22 12 16 6" />
-                    <polyline points="8 6 2 12 8 18" />
-                </svg>
-            )
-        },
-        {
-            title: "AI-Powered Accuracy",
-            description: "Leveraging advanced machine learning algorithms, our system can detect deepfakes, tampered documents, and synthetic identities with an industry-leading 99.8% precision rate.",
-            icon: (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="2" y1="12" x2="22" y2="12" />
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                </svg>
-            )
-        }
-    ];
-
     return (
-        <div style={styles.card}>
-            <h3 style={styles.heading}>Why Choose Sahihai?</h3>
+        <section className={styles.section}>
+            <p className={styles.eyebrow}>Why choose us</p>
+            <h2 className={styles.headline}>Built for trust,<br /><span>designed for scale.</span></h2>
 
-            <div style={styles.grid}>
-                {reasons.map((reason, idx) => (
-                    <div key={idx} style={styles.featureItem}>
-                        <div style={styles.iconWrap}>
-                            {reason.icon}
-                        </div>
-                        <div style={styles.textContent}>
-                            <h4 style={styles.title}>{reason.title}</h4>
-                            <p style={styles.description}>{reason.description}</p>
-                        </div>
+            <div className={styles.grid}>
+
+                {/* Card 1: Bank-Grade Security */}
+                <div className={`${styles.card} ${styles.card1}`}>
+                    <div className={styles.progressBar}></div>
+                    <span className={styles.cardNumber}>01</span>
+                    <div className={styles.iconWrap}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
                     </div>
-                ))}
-            </div>
+                    <h3 className={styles.cardTitle}>Bank-Grade Security</h3>
+                    <p className={styles.cardDesc}>Your data is protected with AES-256 encryption, zero-knowledge architecture, and SOC 2 Type II compliance — the same standard trusted by global financial institutions.</p>
+                    <span className={styles.tag}>256-bit Encrypted</span>
+                </div>
 
-            {/* Decorative Blob */}
-            <div style={styles.decorativeBg} />
-        </div>
+                {/* Card 2: Seamless Integration */}
+                <div className={`${styles.card} ${styles.card2}`}>
+                    <div className={styles.progressBar}></div>
+                    <span className={styles.cardNumber}>02</span>
+                    <div className={styles.iconWrap}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
+                        </svg>
+                    </div>
+                    <h3 className={styles.cardTitle}>Seamless Integration</h3>
+                    <p className={styles.cardDesc}>Connect with your existing stack in minutes — REST APIs, webhooks, and native plugins for 200+ platforms. No friction, no rewrites, just plug in and go.</p>
+                    <span className={styles.tag}>200+ Integrations</span>
+                </div>
+
+                {/* Card 3: AI-Powered Accuracy */}
+                <div className={`${styles.card} ${styles.card3}`}>
+                    <div className={styles.progressBar}></div>
+                    <span className={styles.cardNumber}>03</span>
+                    <div className={styles.iconWrap}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 0 2h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1 0-2h1a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2z" />
+                            <path d="M9 14h.01M15 14h.01M9.5 17.5a3.5 3.5 0 0 0 5 0" />
+                        </svg>
+                    </div>
+                    <h3 className={styles.cardTitle}>AI-Powered Accuracy</h3>
+                    <p className={styles.cardDesc}>Our models are trained on domain-specific data, delivering 99.4% accuracy out of the box. Continuously learning, always improving — intelligence that works as hard as you do.</p>
+                    <span className={styles.tag}>99.4% Accuracy</span>
+                </div>
+
+            </div>
+        </section>
     );
 }
-
-const styles: Record<string, React.CSSProperties> = {
-    card: {
-        background: "#fff",
-        borderRadius: 24,
-        padding: "40px",
-        boxShadow: "0 12px 48px rgba(59,110,248,0.06), 0 2px 6px rgba(0,0,0,0.03)",
-        width: "100%",
-        position: "relative",
-        overflow: "hidden",
-    },
-    heading: {
-        fontSize: 24,
-        fontWeight: 800,
-        color: "#1a1a2e",
-        margin: "0 0 32px 0",
-        letterSpacing: "-0.4px",
-        position: "relative",
-        zIndex: 2,
-    },
-    grid: {
-        display: "flex",
-        flexDirection: "column",
-        gap: 32,
-        position: "relative",
-        zIndex: 2,
-    },
-    featureItem: {
-        display: "flex",
-        gap: 20,
-        alignItems: "flex-start",
-    },
-    iconWrap: {
-        width: 48,
-        height: 48,
-        borderRadius: 14,
-        background: "var(--blue)",
-        color: "#fff",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexShrink: 0,
-        boxShadow: "0 6px 16px rgba(37,99,235,0.25)",
-    },
-    textContent: {
-        display: "flex",
-        flexDirection: "column",
-        gap: 6,
-        paddingTop: 2,
-    },
-    title: {
-        fontSize: 17,
-        fontWeight: 700,
-        color: "#1a1a2e",
-        margin: 0,
-    },
-    description: {
-        fontSize: 14,
-        color: "#5c677d",
-        margin: 0,
-        lineHeight: 1.6,
-    },
-    decorativeBg: {
-        position: "absolute",
-        bottom: -80,
-        right: -80,
-        width: 250,
-        height: 250,
-        borderRadius: "50%",
-        background: "radial-gradient(circle, rgba(59,110,248,0.07) 0%, transparent 70%)",
-        zIndex: 1,
-        pointerEvents: "none",
-    },
-};
