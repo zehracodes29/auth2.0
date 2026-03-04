@@ -59,74 +59,6 @@ export default function ServicesPage() {
         to { transform: translate(30px, -20px) scale(1.05); }
     }
 
-    /* ─── Navigation ─── */
-    .nav-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 24px 48px;
-        position: relative;
-        z-index: 10;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        box-sizing: border-box;
-        animation: fadeDown 0.6s cubic-bezier(0.22,1,0.36,1) both;
-    }
-
-    .logo-wrap {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-    }
-
-    .logo-icon {
-        width: 32px;
-        height: 32px;
-        background: var(--blue, #2563EB);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(37,99,235,0.3);
-        transition: transform 0.2s;
-    }
-
-    .logo-wrap:hover .logo-icon {
-        transform: scale(1.05) rotate(-5deg);
-    }
-
-    .logo-text {
-        font-weight: 700;
-        font-size: 18px;
-        color: var(--text, #0F172A);
-        letter-spacing: -0.4px;
-        font-family: 'DM Serif Display', serif;
-    }
-
-    .back-link {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        color: var(--text-muted, #64748B);
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 14px;
-        transition: color 0.2s;
-        padding: 8px 16px;
-        border-radius: 100px;
-        background: rgba(255,255,255,0.5);
-        border: 1px solid var(--border);
-        backdrop-filter: blur(10px);
-    }
-
-    .back-link:hover {
-        color: var(--blue, #2563EB);
-        background: white;
-        border-color: var(--blue-pale, #DBEAFE);
-    }
-
     /* ─── Layout ─── */
     .content-container {
         position: relative;
@@ -489,13 +421,11 @@ export default function ServicesPage() {
         to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
         .service-row, .service-row:nth-child(even) {
             flex-direction: column;
             gap: 40px;
         }
-        .nav-header { padding: 20px; }
         .services-title { font-size: 32px; }
         .services-grid { gap: 100px; }
         .cta-section { padding: 40px 20px; }
@@ -511,22 +441,7 @@ export default function ServicesPage() {
             <div className="blob-top" />
             <div className="blob-bottom" />
 
-            <nav className="nav-header">
-                <Link href="/" className="logo-wrap">
-                    <div className="logo-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-                            <path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 8c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3zm-5 12v-1c0-3.309 2.691-6 6-6h-1c-3.309 0-6 2.691-6 6v1h1zm10 0v-1c0-3.309-2.691-6-6-6h1c3.309 0 6 2.691 6 6v1h-1z" />
-                        </svg>
-                    </div>
-                    <span className="logo-text">SahiHai</span>
-                </Link>
-                <Link href="/" className="back-link">
-                    <svg fill="currentColor" width="16" height="16" viewBox="0 0 24 24">
-                        <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z" />
-                    </svg>
-                    Back
-                </Link>
-            </nav>
+
 
             <main className="content-container">
                 <div className="services-hero">
