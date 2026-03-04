@@ -49,13 +49,32 @@ export default function MainPage() {
       animation: floatElement ease-in-out infinite alternate;
     }
     
-    .el-1 { top: 8%; left: 12%; width: 220px; animation-duration: 14s; opacity: 0.9; }
-    .el-2 { top: 25%; right: 6%; width: 280px; animation-duration: 18s; animation-direction: alternate-reverse; opacity: 0.6; filter: blur(2px); z-index: 0; }
-    .el-3 { bottom: 12%; left: 18%; width: 250px; animation-duration: 16s; opacity: 0.9; }
-    .el-4 { bottom: 18%; right: 12%; width: 200px; animation-duration: 12s; opacity: 0.85; }
-    .el-5 { top: 10%; right: 28%; width: 190px; animation-duration: 15s; filter: blur(1px); opacity: 0.7; z-index: 0; }
-    .el-6 { top: 50%; left: 2%; width: 160px; animation-duration: 13s; opacity: 0.8; }
-    .el-7 { bottom: 2%; left: 45%; width: 220px; animation-duration: 17s; filter: blur(3px); opacity: 0.5; z-index: 0; }
+    .el-1 { top: 8%; left: 12%; width: 90px; animation-duration: 14s; opacity: 0.9; }
+    .el-2 { top: 25%; right: 6%; width: 120px; animation-duration: 18s; animation-direction: alternate-reverse; opacity: 0.6; filter: blur(2px); z-index: 0; }
+    .el-3 { bottom: 12%; left: 18%; width: 100px; animation-duration: 16s; opacity: 0.9; }
+    .el-4 { bottom: 18%; right: 12%; width: 80px; animation-duration: 12s; opacity: 0.85; }
+    .el-5 { top: 10%; right: 28%; width: 75px; animation-duration: 15s; filter: blur(1px); opacity: 0.7; z-index: 0; }
+    .el-6 { top: 50%; left: 2%; width: 65px; animation-duration: 13s; opacity: 0.8; }
+    .el-7 { bottom: 2%; left: 45%; width: 95px; animation-duration: 17s; filter: blur(3px); opacity: 0.5; z-index: 0; }
+
+    .gif-crop {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      background: white;
+    }
+    
+    .gif-crop img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 290%;
+      max-width: none;
+      transform: translate(-50%, -50%);
+    }
 
     @keyframes floatElement {
       0% { transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); }
@@ -410,13 +429,13 @@ export default function MainPage() {
       <div className="bg">
         <div className="bg-glow-tr" />
         <div className="bg-glow-bl" />
-        <img className="floating-el el-1" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
-        <img className="floating-el el-2" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
-        <img className="floating-el el-3" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
-        <img className="floating-el el-4" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
-        <img className="floating-el el-5" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
-        <img className="floating-el el-6" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
-        <img className="floating-el el-7" src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" />
+        <div className="floating-el el-1"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
+        <div className="floating-el el-2"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
+        <div className="floating-el el-3"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
+        <div className="floating-el el-4"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
+        <div className="floating-el el-5"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
+        <div className="floating-el el-6"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
+        <div className="floating-el el-7"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
       </div>
 
       {/* Nav */}
