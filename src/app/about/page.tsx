@@ -49,7 +49,6 @@ const styles: Record<string, React.CSSProperties> = {
         background: "#f0f4ff",
         fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif",
         position: "relative",
-        overflowX: "hidden",
         display: "flex",
         flexDirection: "column",
     },
