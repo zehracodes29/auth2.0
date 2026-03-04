@@ -1,3 +1,10 @@
+import TrustedBy from "../components/home/TrustedBy";
+import FeaturesGrid from "../components/home/FeaturesGrid";
+import LeftRightSection from "../components/home/LeftRightSection";
+import RightLeftSection from "../components/home/RightLeftSection";
+import Insights from "../components/home/Insights";
+import BottomCTA from "../components/home/BottomCTA";
+import Footer from "../components/Footer";
 
 export default function MainPage() {
   const styles = `
@@ -419,25 +426,16 @@ export default function MainPage() {
 
       </main>
 
-      {/* Stats strip */}
-      <div className="stats">
-        <div className="stat">
-          <div className="stat-num">99.8%</div>
-          <div className="stat-desc">Verification accuracy</div>
-        </div>
-        <div className="stat">
-          <div className="stat-num">&lt; 2s</div>
-          <div className="stat-desc">Average verify time</div>
-        </div>
-        <div className="stat">
-          <div className="stat-num">180+</div>
-          <div className="stat-desc">Countries supported</div>
-        </div>
-        <div className="stat">
-          <div className="stat-num">50M+</div>
-          <div className="stat-desc">Identities verified</div>
-        </div>
-      </div>
+      {/* New Modular Sections */}
+      <TrustedBy />
+      <FeaturesGrid />
+      <LeftRightSection />
+      <RightLeftSection />
+      <Insights />
+      <BottomCTA />
+
+      {/* Universal Footer */}
+      <Footer />
     </>
   );
 }

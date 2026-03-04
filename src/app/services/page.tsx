@@ -6,7 +6,6 @@ export default function ServicesPage() {
     const styles = `
     /* ─── Global & Background ─── */
     .services-bg {
-        min-height: 100vh;
         background: var(--background);
         font-family: var(--font-sans), 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         color: var(--foreground);
@@ -600,16 +599,6 @@ export default function ServicesPage() {
                     <p className="cta-desc" style={{ marginBottom: "20px" }}>
                         Integrate our APIs in minutes. No complex paperwork. Start verifying your first 100 users for free.
                     </p>
-                    <ul className="cta-features">
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="10" fill="#10B981" fillOpacity="0.1" /><path d="M14 7L8.5 12.5L6 10" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                            Responsive design
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="10" fill="#10B981" fillOpacity="0.1" /><path d="M14 7L8.5 12.5L6 10" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                            Activity
-                        </li>
-                    </ul>
                     <Link href="/signup" className="btn-primary">
                         Create an Account
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
