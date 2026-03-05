@@ -1,7 +1,9 @@
 import TrustedBy from "../components/home/TrustedBy";
 import FeaturesGrid from "../components/home/FeaturesGrid";
-import LeftRightSection from "../components/home/LeftRightSection";
-import RightLeftSection from "../components/home/RightLeftSection";
+import HowItWorks from "../components/home/HowItWorks";
+import VerificationTypes from "../components/home/VerificationTypes";
+import PricingPreview from "../components/home/PricingPreview";
+import Testimonials from "../components/home/Testimonials";
 import Insights from "../components/home/Insights";
 import BottomCTA from "../components/home/BottomCTA";
 import Footer from "../components/Footer";
@@ -429,8 +431,10 @@ export default function MainPage() {
       {/* New Modular Sections */}
       <TrustedBy />
       <FeaturesGrid />
-      <LeftRightSection />
-      <RightLeftSection />
+      <HowItWorks />
+      <VerificationTypes />
+      <PricingPreview />
+      <Testimonials />
       <Insights />
       <BottomCTA />
 
