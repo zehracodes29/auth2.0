@@ -67,6 +67,16 @@ export default function NavBar() {
       transition: all 0.18s ease;
     }
     .nav-links a:hover { color: var(--blue, #2563EB); background: white; }
+    
+    .login-btn {
+      background: var(--blue-dark, #1e40af) !important;
+      color: white !important;
+      font-weight: 600 !important;
+    }
+    .login-btn:hover { 
+      background: var(--blue, #2563EB) !important; 
+      color: white !important;
+    }
 
     @media (max-width: 640px) {
       .global-nav { padding: 16px 22px; }
@@ -95,8 +105,9 @@ export default function NavBar() {
                     <Link href="/about">About</Link>
                     <Link href="/services">Solutions</Link>
                     {/* <Link href="#">Pricing</Link> */}
-                    <Link href="/login">Login</Link>
                     <Link href="/contact">Contact</Link>
+                    <Link href="/login" className="login-btn">Login</Link>
+
                 </div>
             </nav>
         </>

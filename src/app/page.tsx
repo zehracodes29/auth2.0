@@ -380,14 +380,7 @@ export default function MainPage() {
       <div className="bg">
         <div className="bg-glow-tr" />
         <div className="bg-glow-bl" />
-        <div className="floating-el el-1"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
-        <div className="floating-el el-2"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
-        <div className="floating-el el-3"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
-        <div className="floating-el el-4"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
-        <div className="floating-el el-5"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
-        <div className="floating-el el-6"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
-        <div className="floating-el el-7"><div className="gif-crop"><img src="https://cdn.dribbble.com/userupload/42004457/file/original-9292f9cf4c847a14062116cc50889287.gif" alt="" /></div></div>
-      </div>
+              </div>
 
 
       {/* Hero */}

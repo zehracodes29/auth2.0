@@ -10,7 +10,6 @@ export default function ServicesPage() {
         font-family: var(--font-sans), 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         color: var(--foreground);
         position: relative;
-        overflow-x: hidden;
         display: flex;
         flex-direction: column;
     }

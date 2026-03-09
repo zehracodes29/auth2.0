@@ -157,36 +157,50 @@ export default function PricingPreview() {
         <section className="pricing-preview">
             <style>{styles}</style>
             <div className="pricing-header">
-                <h2 className="pricing-title">Simple, transparent pricing</h2>
-                <p className="pricing-subtitle">Pay only for what you verify. Scale easily without hidden costs.</p>
+                <h2 className="pricing-title">Choose your verification plan</h2>
+                <p className="pricing-subtitle">Flexible plans designed for businesses of all sizes. Get started with our affordable packages.</p>
             </div>
 
             <div className="pricing-cards">
-                {/* Starter */}
+                {/* Verifiseed */}
                 <div className="pricing-card">
-                    <h3 className="p-tier">Pay As You Go</h3>
-                    <p className="p-desc">Perfect for growing businesses testing out new flows.</p>
-                    <div className="p-price">₹10<span>/ verification</span></div>
+                    <h3 className="p-tier">Verifiseed</h3>
+                    <p className="p-desc">1 verification • 30 days validity</p>
+                    <div className="p-price">₹49</div>
                     <ul className="p-features">
-                        <li>Basic KYC (Aadhaar / PAN)</li>
-                        <li>Standard API Access</li>
-                        <li>Email Support</li>
-                        <li>No minimum commitment</li>
+                        <li>Basic KYC verification</li>
+                        <li>Standard API access</li>
+                        <li>Email support</li>
+                        <li>Perfect for first-time users</li>
                     </ul>
                     <Link href="/signup" className="btn-pricing">Get Started</Link>
                 </div>
 
-                {/* Popular / Pro */}
-                <div className="pricing-card popular">
-                    <div className="popular-badge">Most Popular</div>
-                    <h3 className="p-tier">Growth Plan</h3>
-                    <p className="p-desc">Ideal for scaling operations with dedicated volume.</p>
-                    <div className="p-price">₹8<span>/ verification</span></div>
+                {/* VerifiPlus */}
+                <div className="pricing-card">
+                    <h3 className="p-tier">VerifiPlus</h3>
+                    <p className="p-desc">10 verifications • 365 days validity</p>
+                    <div className="p-price">₹449<span> (₹44.90/verification)</span></div>
                     <ul className="p-features">
-                        <li>Includes KYB & Advanced Checks</li>
-                        <li>Priority API rate limits</li>
-                        <li>Dedicated Account Manager</li>
-                        <li>Volume Discounts</li>
+                        <li>Advanced KYC & KYB checks</li>
+                        <li>Priority API access</li>
+                        <li>Dedicated support</li>
+                        <li>Ideal for shopkeepers & property owners</li>
+                    </ul>
+                    <Link href="/signup" className="btn-pricing">Get Started</Link>
+                </div>
+
+                {/* VerifiPro - Recommended */}
+                <div className="pricing-card popular">
+                    <div className="popular-badge">Recommended</div>
+                    <h3 className="p-tier">VerifiPro</h3>
+                    <p className="p-desc">25 verifications • 365 days validity</p>
+                    <div className="p-price">₹999<span> (₹44.90/verification)</span></div>
+                    <ul className="p-features">
+                        <li>Complete verification suite</li>
+                        <li>Highest priority support</li>
+                        <li>Advanced analytics dashboard</li>
+                        <li>Best for growing businesses</li>
                     </ul>
                     <Link href="/contact" className="btn-pricing">Contact Sales</Link>
                 </div>

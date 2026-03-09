@@ -8,9 +8,9 @@ export default function Footer() {
     .site-footer {
       background: var(--text); /* Dark blue/slate color based on screenshot */
       color: white;
-      padding: 80px 24px 40px;
-      margin-top: -60px; /* Slight overlap with illustration curve if desired */
-      border-radius: 60px 60px 0 0;
+      padding: 40px 24px 20px;
+      margin-top: 0; /* Remove negative margin */
+      border-radius: 30px 30px 0 0;
       position: relative;
     }
 
@@ -18,8 +18,8 @@ export default function Footer() {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
     }
 
     .footer-brand {
@@ -116,8 +116,8 @@ export default function Footer() {
 
     .footer-bottom {
       max-width: 1200px;
-      margin: 80px auto 0;
-      padding-top: 30px;
+      margin: 40px auto 0;
+      padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.1);
       display: flex;
       justify-content: flex-end;
@@ -181,36 +181,9 @@ export default function Footer() {
                         Smarter identity verification and compliance for high growth businesses.
                     </p>
                     <div>
-                        <Link href="/signup" className="footer-btn">Start for free</Link>
+                        <Link href="/signup" className="footer-btn">Get Started</Link>
                         <Link href="/services" className="footer-btn-outline">Learn More</Link>
                     </div>
-                </div>
-
-                <div className="footer-column">
-                    <h4>Products</h4>
-                    <ul className="footer-links">
-                        <li><Link href="#">Identity</Link></li>
-                        <li><Link href="/services">Screening</Link></li>
-                        <li><Link href="#">Business</Link></li>
-                    </ul>
-                </div>
-
-                <div className="footer-column">
-                    <h4>Company</h4>
-                    <ul className="footer-links">
-                        <li><Link href="/about">About</Link></li>
-                        <li><Link href="#">Careers</Link></li>
-                        <li><Link href="#">Insights</Link></li>
-                    </ul>
-                </div>
-
-                <div className="footer-column">
-                    <h4>Support</h4>
-                    <ul className="footer-links">
-                        <li><Link href="/contact">Contact</Link></li>
-                        <li><Link href="#">Help Center</Link></li>
-                        <li><Link href="#">Status</Link></li>
-                    </ul>
                 </div>
 
                 <div className="footer-column">
